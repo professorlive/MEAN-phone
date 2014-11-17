@@ -4,7 +4,7 @@ MEAN-phone
 Contains a MEAN stack based application to show a list of phones and a phone details.
 It's inspired to the angular-phonecat tutorial from the AngularJS official page.
 
-- Repackaged the application to use express and Node.js js to serve the angularjs front end.
+- Repackaged the application to use Express and Node.js js to serve the angularjs front end.
 - Added infinite scroll to load phone list dinamically
 - Added persistence of the phone list sorting option and auto scroll effect to browse phones easier
 - Added MongoDB persistece layer (an instance of MongoDB must be running at localhost:27017).
@@ -18,7 +18,7 @@ Cloning
 Building
 ---------
 I used [bower](http://bower.io/) for angularjs's dependency management and [npm](https://www.npmjs.org/) for 
-Node.js's and express's dependencies.
+Node.js' and Express' dependencies.
 Once the environment is ready, cd to the root folder of the project then run:
 
     bower install
