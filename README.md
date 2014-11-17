@@ -1,4 +1,5 @@
 MEAN-phone
 ==========
 
-Contains a MEAN base application to show a list of phone and the phone details both coming from a mongo db instance. Node + AngularJS  + MongoDB + Express 
+Contains a MEAN stack based application to show a list of phones and the phone detail both coming from a mongo db instance.
+It's inspired to the angular-phonecat tutorial from the AngularJS official page.
