@@ -14,7 +14,7 @@
     <div class="col-md-10">
       <!--Body content-->
 
-      <ul class="phones" infinite-scroll='loadMore()' infinite-scroll-distance="1">
+      <ul class="phones" infinite-scroll='loadMore()' infinite-scroll-distance="3">
         <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" on-finish-render
             class="thumbnail phone-listing" id="{{phone.pid}}">
           <a href="#/phones/{{phone.pid}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>

@@ -30,7 +30,7 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$rootScope', 'Phone'
             if (typeof $rootScope.phones == 'undefined' || $scope.phones.length == $rootScope.phones.length)
                 return;
             var last = $scope.phones.length - 1;
-            for (var i = last + 1; i < partialListSize, i < $rootScope.phones.length; i++) {
+            for (var i = last + 1, j=0; j < partialListSize, i < $rootScope.phones.length; i++,j++) {
                 $scope.phones.push($rootScope.phones[i]);
             }
         };
