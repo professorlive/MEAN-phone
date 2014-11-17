@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderProp" ng-change="orderPropChanged()">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+      </select>
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="phones" infinite-scroll='loadMore()' infinite-scroll-distance="1">
+        <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" on-finish-render
+            class="thumbnail phone-listing" id="{{phone.pid}}">
+          <a href="#/phones/{{phone.pid}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+          <a href="#/phones/{{phone.pid}}">{{phone.name}}</a>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
