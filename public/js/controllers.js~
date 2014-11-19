@@ -31,6 +31,7 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$rootScope', 'Phone'
                 return;
             var first = $scope.phones.length, last = Math.min(partialListSize, $rootScope.phones.length-1);
 	    $scope.phones = $scope.phones.concat($rootScope.phones.slice(first, first + last));
+		console.log(JSON.stringify($scope.phones)); 
         };
 
 

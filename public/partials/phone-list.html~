@@ -13,9 +13,9 @@
     </div>
     <div class="col-md-10">
       <!--Body content-->
-	Sorted by: <p ng-bind="orderProp"></p>
-	Search by: <p ng-bind="query"></p>
-
+	
+	<p>Order by: {{query}}</p>
+	<p>Sort by: {{orderProp}}</p>
 
       <ul class="phones" infinite-scroll='loadMore()' infinite-scroll-distance="3">
         <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" on-finish-render
