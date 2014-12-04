@@ -18,9 +18,11 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$rootScope', 'Phone'
         //load the phone list
         if (!phoneCache.get('phones')){
             Phone.list(function(phoneL) {
-                phoneCache.put('phones', phoneL);
-                $scope.phones = phoneL.slice(0, partialListSize);
-		//console.log(JSON.stringify($scope.phones));           
+		if(phoneL && phoneL.length>0){
+			phoneCache.put('phones', phoneL);
+                	$scope.phones = phoneL.slice(0, partialListSize);
+		}else
+		        $scope.phones = [];
             });
 	}else{
 		$scope.phones=phoneCache.get('phones');
@@ -61,8 +63,8 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$rootScope', 'Phone'
     }
 ]);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$rootScope', '$anchorScroll', '$location', '$routeParams', 'Phone',
-    function($scope, $rootScope, $anchorScroll, $location, $routeParams, Phone) {
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$rootScope', '$routeParams', 'Phone',
+    function($scope, $rootScope, $routeParams, Phone) {
 
         $scope.setImage = function(imageUrl) {
             $scope.mainImageUrl = imageUrl;
